@@ -22,20 +22,11 @@ export class TasksComponent {
     return this.tasksService.getUserTasks(this.userId);
   }
 
-  onCompleteTask(id: string) {
-    this.tasksService.removeTask(id);
-  }
-
   onTaskAdd() {
     this.isAddOpen = !this.isAddOpen;
   }
 
   closeAddTask() {
     this.isAddOpen = false;
-  }
-
-  onAddTaskSubmit(taskData: NewTask) {
-    this.tasksService.addTask(taskData, this.userId);
-    this.closeAddTask();
   }
 }
