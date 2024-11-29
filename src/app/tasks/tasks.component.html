@@ -1,5 +1,5 @@
 @if(isAddOpen){
-<app-add-task (close)="closeAddTask()" />
+<app-add-task (close)="closeAddTask()" (add)="onAddTaskSubmit($event)" />
 }
 
 <section id="tasks">

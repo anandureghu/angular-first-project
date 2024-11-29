@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TaskComponent } from '../task/task.component';
 import { dummyTasks } from '../dummy-tasks';
 import { AddTaskComponent } from '../add-task/add-task.component';
+import { type NewTask } from '../task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -30,5 +31,17 @@ export class TasksComponent {
 
   closeAddTask() {
     this.isAddOpen = false;
+  }
+
+  onAddTaskSubmit(taskData: NewTask) {
+    this.tasks.unshift({
+      id: new Date().getTime().toString(),
+      userId: this.userId,
+      dueDate: taskData.date,
+      title: taskData.title,
+      summary: taskData.summary,
+    });
+
+    this.closeAddTask();
   }
 }
