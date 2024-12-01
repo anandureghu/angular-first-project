@@ -1,25 +1,41 @@
-import { Component, Output } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
-import { UserComponent } from './user/user.component';
-import { DUMMY_USERS } from './dummy-users';
-import { TasksComponent } from './tasks/tasks.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  users = DUMMY_USERS;
-  selectedUserId: string = DUMMY_USERS[0].id;
-
-  get selectedUser() {
-    return DUMMY_USERS.find((user) => user.id == this.selectedUserId)!;
-  }
-
-  onSelectUser(id: string) {
-    this.selectedUserId = id;
-  }
+  dummyTrafficData = [
+    {
+      id: 'd1',
+      value: 433,
+    },
+    {
+      id: 'd2',
+      value: 260,
+    },
+    {
+      id: 'd3',
+      value: 290,
+    },
+    {
+      id: 'd4',
+      value: 410,
+    },
+    {
+      id: 'd5',
+      value: 397,
+    },
+    {
+      id: 'd6',
+      value: 488,
+    },
+    {
+      id: 'd47',
+      value: 589,
+    },
+  ];
+  maxTraffic = Math.max(...this.dummyTrafficData.map((data) => data.value));
+  currentStatus = 'online';
 }
