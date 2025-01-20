@@ -1,0 +1,82 @@
+.dashboard {
+  padding: 30px 9%;
+
+  &__header {
+    &-title {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    &-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      color: #66776b;
+    }
+  }
+
+  &__listing {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border-bottom: 1px solid rgb(239, 239, 239);
+    }
+
+    thead {
+      th {
+        padding: 15px;
+        background-color: rgb(235, 243, 244);
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 14px;
+        border-bottom: none;
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          font-size: 14px;
+        }
+
+        .id {
+          font-weight: 300;
+        }
+
+        .name {
+          font-weight: 600;
+        }
+
+        .username {
+          font-style: italic;
+          &::before {
+            content: "@";
+          }
+        }
+        &:last-child {
+          td {
+            border-bottom: 1px solid transparent;
+          }
+        }
+      }
+    }
+
+    table {
+      border-radius: 10px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    td {
+      padding: 10px;
+    }
+  }
+}
