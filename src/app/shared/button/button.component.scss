@@ -9,6 +9,13 @@
   align-items: center;
   gap: 8px;
 
+  &.rounded {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    padding: 11px;
+  }
+
   &.primary {
     background: #005c97; /* fallback for old browsers */
     background: -webkit-linear-gradient(
@@ -35,6 +42,23 @@
 
     &:hover {
       background-color: #f2fcfb;
+    }
+  }
+
+  &.error {
+    background-color: rgb(247, 215, 215);
+    border: 1px solid rgb(233, 3, 3);
+    color: white;
+    svg {
+      fill: white;
+    }
+  }
+  &.warning {
+    background-color: rgb(255, 241, 196);
+    border: 1px solid rgb(212, 163, 3);
+    color: white;
+    svg {
+      fill: white;
     }
   }
 }

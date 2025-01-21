@@ -1,1 +1,3 @@
-<button [class]="'button ' + variant"><ng-content /></button>
+<button [class]="['button', variant, classList.join(' ')].join(' ')">
+  <ng-content />
+</button>

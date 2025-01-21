@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { ButtonVariants } from '../../../types/button.type';
+import { ButtonClasses, ButtonVariants } from '../../../types/button.type';
 
 @Component({
   selector: 'app-button',
@@ -9,4 +9,5 @@ import { ButtonVariants } from '../../../types/button.type';
 })
 export class ButtonComponent {
   @Input() variant: ButtonVariants = 'primary';
+  @Input() classList: ButtonClasses[] = [];
 }

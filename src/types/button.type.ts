@@ -1,1 +1,2 @@
-export type ButtonVariants = 'primary' | 'secondary';
+export type ButtonVariants = 'primary' | 'secondary' | 'error' | 'warning';
+export type ButtonClasses = 'rounded';

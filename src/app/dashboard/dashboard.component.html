@@ -11,41 +11,30 @@
     <table>
       <thead>
         <tr>
-          <th rowspan="2">ID</th>
-          <th rowspan="2">Name</th>
-          <th rowspan="2">username</th>
-          <th rowspan="2">age</th>
-          <!-- <th>marks</th> -->
-          <th rowspan="2">total</th>
+          <th>Name</th>
+          <th>Class</th>
+          <th>Total Marks</th>
+          <th>Status</th>
+          <th>Actions</th>
         </tr>
-        <!-- <tr>
-          <th>english</th>
-          <th>maths</th>
-          <th>science</th>
-        </tr> -->
       </thead>
       <tbody>
+        @for (student of students; track student.id) {
         <tr>
-          <td class="id">1</td>
-          <td class="name">John Doe</td>
-          <td class="username">johndoe</td>
-          <td class="age">24</td>
-          <td class="total">253</td>
+          <td class="name">{{ student.name }}</td>
+          <td class="class">{{ student.class }}</td>
+          <td class="total">{{ student.totalMarks }}</td>
+          <td class="status">{{ student.totalMarks }}</td>
+          <td class="actions">
+            <app-button [variant]="'warning'" [classList]="['rounded']">
+              <img src="/assets/icons/edit.svg" width="16" height="16" />
+            </app-button>
+            <app-button [variant]="'error'" [classList]="['rounded']">
+              <img src="/assets/icons/delete.svg" width="16" height="16" />
+            </app-button>
+          </td>
         </tr>
-        <tr>
-          <td class="id">1</td>
-          <td class="name">John Doe</td>
-          <td class="username">johndoe</td>
-          <td class="age">24</td>
-          <td class="total">253</td>
-        </tr>
-        <tr>
-          <td class="id">1</td>
-          <td class="name">John Doe</td>
-          <td class="username">johndoe</td>
-          <td class="age">24</td>
-          <td class="total">253</td>
-        </tr>
+        }
       </tbody>
     </table>
   </section>
