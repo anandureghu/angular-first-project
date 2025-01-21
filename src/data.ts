@@ -7,11 +7,11 @@ export const studentsList = [
     age: 16,
     class: 10,
     marks: {
-      math: 85,
-      science: 90,
-      english: 78,
+      math: 50,
+      science: 40,
+      english: 38,
     },
-    totalMarks: 253,
+    totalMarks: 128,
   },
   {
     id: 2,

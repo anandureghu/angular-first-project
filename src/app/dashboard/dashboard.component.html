@@ -8,6 +8,12 @@
   </section>
 
   <section class="dashboard__listing">
+    <div class="dashboard__listing-actions">
+      <app-button [variant]="'secondary'">
+        <ng-icon name="featherPlus" class="icon" />
+        <span>Add New</span>
+      </app-button>
+    </div>
     <table>
       <thead>
         <tr>
@@ -22,9 +28,18 @@
         @for (student of students; track student.id) {
         <tr>
           <td class="name">{{ student.name }}</td>
-          <td class="class">{{ student.class }}</td>
+          <td class="class">{{ student.class | grade }}</td>
           <td class="total">{{ student.totalMarks }}</td>
-          <td class="status">{{ student.totalMarks }}</td>
+          <td class="status">
+            <div
+              [class]="
+                'status-item ' +
+                (student.totalMarks | status).toLowerCase().replace(' ', '-')
+              "
+            >
+              {{ student.totalMarks | status }}
+            </div>
+          </td>
           <td class="actions">
             <app-button [variant]="'warning'" [classList]="['rounded']">
               <img src="/assets/icons/edit.svg" width="16" height="16" />

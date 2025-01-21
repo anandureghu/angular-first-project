@@ -15,6 +15,12 @@
   }
 
   &__listing {
+    &-actions {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -58,6 +64,50 @@
             content: "@";
           }
         }
+
+        .status {
+          .status-item {
+            padding: 3px 10px;
+            border: 1px solid;
+            width: fit-content;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+
+            &.below-average {
+              background-color: rgb(255, 205, 205);
+              color: red;
+              border-color: red;
+            }
+
+            &.average {
+              background-color: rgb(255, 255, 201);
+              color: rgb(160, 144, 0);
+              border-color: rgb(207, 195, 15);
+            }
+
+            &.excellent {
+              background-color: rgb(180, 253, 223);
+              color: rgb(7, 131, 110);
+              border-color: rgb(7, 131, 110);
+            }
+          }
+        }
+
+        .actions {
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: start;
+
+          img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
         &:last-child {
           td {
             border-bottom: 1px solid transparent;
@@ -72,25 +122,12 @@
     }
 
     th {
-      text-align: center;
+      text-align: left;
     }
 
     td {
       padding: 10px;
-      text-align: center;
-
-      &.actions {
-        gap: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        img {
-          object-fit: contain;
-          width: 100%;
-          height: 100%;
-        }
-      }
+      text-align: left;
     }
   }
 }
