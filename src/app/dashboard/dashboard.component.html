@@ -9,10 +9,15 @@
 
   <section class="dashboard__listing">
     <div class="dashboard__listing-actions">
-      <app-button [variant]="'secondary'">
-        <ng-icon name="featherPlus" class="icon" />
-        <span>Add New</span>
-      </app-button>
+      <a
+        [routerLink]="['/add-new-student']"
+        routerLinkActive="router-link-active"
+      >
+        <app-button [variant]="'secondary'">
+          <ng-icon name="featherPlus" class="icon" />
+          <span>Add New</span>
+        </app-button>
+      </a>
     </div>
     <table>
       <thead>

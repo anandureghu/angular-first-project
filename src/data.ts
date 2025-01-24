@@ -1,4 +1,6 @@
-export const studentsList = [
+import { Student } from './types/student.type';
+
+export const studentsList: Student[] = [
   {
     id: 1,
     username: 'john_doe',

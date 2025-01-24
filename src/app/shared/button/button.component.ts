@@ -10,4 +10,6 @@ import { ButtonClasses, ButtonVariants } from '../../../types/button.type';
 export class ButtonComponent {
   @Input() variant: ButtonVariants = 'primary';
   @Input() classList: ButtonClasses[] = [];
+  @Input() styles: object = {};
+  @Input() type: string = 'button';
 }

@@ -1,3 +1,7 @@
-<button [class]="['button', variant, classList.join(' ')].join(' ')">
+<button
+  [class]="['button', variant, classList.join(' ')].join(' ')"
+  [style]="styles"
+  [type]="type"
+>
   <ng-content />
 </button>

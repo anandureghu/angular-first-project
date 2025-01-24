@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { AppService } from '../../app.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })

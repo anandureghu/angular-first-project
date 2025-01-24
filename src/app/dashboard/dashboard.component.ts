@@ -5,6 +5,7 @@ import { GradeTransformationPipe } from '../pipes/grade.pipe';
 import { MarkStatusTransformationPipe } from '../pipes/mark.pipe';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { featherPlus } from '@ng-icons/feather-icons';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,7 @@ import { featherPlus } from '@ng-icons/feather-icons';
     GradeTransformationPipe,
     MarkStatusTransformationPipe,
     NgIcon,
+    RouterLink,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
