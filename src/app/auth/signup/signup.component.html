@@ -1,1 +1,86 @@
-<p>signup works!</p>
+<app-auth-wrapper>
+  <div class="signup">
+    <img src="/assets/images/logo.jpeg" alt="logo" class="logo" />
+
+    <div class="signup__details">
+      <h2 class="title">Get Started</h2>
+      <p class="subtitle">
+        Welcome to <b>EDU-M</b> – Manage your education with ease
+      </p>
+    </div>
+
+    <form class="signup__form">
+      <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step>
+          <ng-template matStepLabel>Basic Info</ng-template>
+          <h3>Basic Details</h3>
+          <div class="flex-col">
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="" value="" />
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="" value="" />
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="" value="" />
+            </mat-form-field>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <mat-form-field class="" appearance="outline">
+            <mat-label>Class</mat-label>
+            <input matInput type="number" min="0" max="100" />
+          </mat-form-field>
+          <h3>Marks</h3>
+          <div class="flex">
+            <mat-form-field class="" appearance="outline">
+              <mat-label>Maths</mat-label>
+              <input matInput type="number" min="0" max="100" />
+            </mat-form-field>
+            <mat-form-field class="" appearance="outline">
+              <mat-label>English</mat-label>
+              <input matInput type="number" min="0" max="100" />
+            </mat-form-field>
+            <mat-form-field class="" appearance="outline">
+              <mat-label>Science</mat-label>
+              <input matInput type="number" min="0" max="100" />
+            </mat-form-field>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <div class="flex-col">
+            <mat-form-field class="" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" />
+            </mat-form-field>
+
+            <mat-form-field class="" appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput type="password" />
+            </mat-form-field>
+          </div>
+        </mat-step>
+      </mat-stepper>
+    </form>
+
+    <app-button
+      [styles]="{
+        background: 'linear-gradient(to left, #247452, #061700)',
+        padding: '13px',
+        fontWeight: '600'
+      }"
+    >
+      Sign Up
+    </app-button>
+    <p class="signup">
+      Already have an account? <a [routerLink]="['/login']">Sign In</a>
+    </p>
+  </div>
+</app-auth-wrapper>

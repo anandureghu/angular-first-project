@@ -1,0 +1,46 @@
+.signup {
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  &__details {
+    padding: 30px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+
+    .title {
+      font-weight: 600;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: rgb(128, 128, 128);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .form-field {
+      // background-color: red;
+      input {
+        // background-color: green;
+      }
+    }
+  }
+
+  .signup {
+    text-align: center;
+    margin-top: 20px;
+    a {
+      color: black;
+      font-weight: 600;
+    }
+  }
+}
