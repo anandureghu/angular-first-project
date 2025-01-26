@@ -2,7 +2,8 @@ import { Student } from './types/student.type';
 
 export const studentsList: Student[] = [
   {
-    id: 1,
+    id: '1',
+    email: '',
     username: 'john_doe',
     password: 'password123',
     name: 'John Doe',
@@ -16,7 +17,8 @@ export const studentsList: Student[] = [
     totalMarks: 128,
   },
   {
-    id: 2,
+    id: '2',
+    email: '',
     username: 'jane_smith',
     password: 'securepass',
     name: 'Jane Smith',
@@ -30,7 +32,8 @@ export const studentsList: Student[] = [
     totalMarks: 225,
   },
   {
-    id: 3,
+    id: '3',
+    email: '',
     username: 'emily_clark',
     password: 'mypassword',
     name: 'Emily Clark',
@@ -44,7 +47,8 @@ export const studentsList: Student[] = [
     totalMarks: 276,
   },
   {
-    id: 4,
+    id: '4',
+    email: '',
     username: 'michael_brown',
     password: 'pass123',
     name: 'Michael Brown',
@@ -58,7 +62,8 @@ export const studentsList: Student[] = [
     totalMarks: 188,
   },
   {
-    id: 5,
+    id: '5',
+    email: '',
     username: 'sophia_wilson',
     password: 'sophiapass',
     name: 'Sophia Wilson',
@@ -72,7 +77,8 @@ export const studentsList: Student[] = [
     totalMarks: 242,
   },
   {
-    id: 6,
+    id: '6',
+    email: '',
     username: 'daniel_jones',
     password: 'danielpass',
     name: 'Daniel Jones',
@@ -86,7 +92,8 @@ export const studentsList: Student[] = [
     totalMarks: 264,
   },
   {
-    id: 7,
+    id: '7',
+    email: '',
     username: 'mia_davis',
     password: 'mia1234',
     name: 'Mia Davis',
@@ -100,7 +107,8 @@ export const studentsList: Student[] = [
     totalMarks: 177,
   },
   {
-    id: 8,
+    id: '8',
+    email: '',
     username: 'liam_martin',
     password: 'liampass',
     name: 'Liam Martin',
@@ -114,7 +122,8 @@ export const studentsList: Student[] = [
     totalMarks: 273,
   },
   {
-    id: 9,
+    id: '9',
+    email: '',
     username: 'ava_garcia',
     password: 'ava123',
     name: 'Ava Garcia',
@@ -128,7 +137,8 @@ export const studentsList: Student[] = [
     totalMarks: 215,
   },
   {
-    id: 10,
+    id: '10',
+    email: '',
     username: 'noah_harris',
     password: 'noahpass',
     name: 'Noah Harris',

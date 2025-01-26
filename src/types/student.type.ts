@@ -1,7 +1,8 @@
 export interface Student {
-  id: number; // Incremental ID or UUID
+  id: string; // Incremental ID or UUID
   username: string;
   password: string;
+  email: string;
   name: string;
   age: number;
   class: number;
