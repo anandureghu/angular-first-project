@@ -24,6 +24,13 @@ html {
       outlined-focus-outline-color: green,
     )
   );
+
+  @include mat.stepper-overrides(
+    (
+      container-color: white,
+      header-done-state-icon-background-color: red,
+    )
+  );
 }
 
 * {
@@ -43,4 +50,12 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-end {
+  justify-content: end;
 }
