@@ -28,11 +28,11 @@
   <ul class="nav__userDetails">
     <li class="nav__userDetails-name">
       Hi,
-      <h2>User</h2>
+      <h2>{{ user?.name }}</h2>
     </li>
     <li class="nav__userDetails-logout">
       <a [routerLink]="['/login']" routerLinkActive="router-link-active">
-        <app-button>login / logout</app-button>
+        <app-button>logout</app-button>
       </a>
     </li>
   </ul>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { AppService } from '../../app.service';
+import { AuthService } from '../../../service/auth.service';
+import { Student } from '../../../types/student.type';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +12,13 @@ import { AppService } from '../../app.service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router, private appService: AppService) {}
+  user: Student | null = null;
+
+  constructor(
+    private router: Router,
+    private appService: AppService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
@@ -18,5 +26,6 @@ export class NavbarComponent implements OnInit {
         this.appService.setCurrentUrl(event.urlAfterRedirects);
       }
     });
+    this.user = this.authService._user;
   }
 }
