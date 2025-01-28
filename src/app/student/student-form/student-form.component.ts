@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -9,7 +9,6 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { AuthService } from '../../../service/auth.service';
 import { errorMessages } from '../../auth/signup/consts';
 import { IStudentSubmit, Student } from '../../../types/student.type';
 import { v4 as uuidv4 } from 'uuid';
@@ -18,7 +17,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
-import { ButtonComponent } from '../../shared/button/button.component';
 
 @Component({
   selector: 'app-student-form',
@@ -36,37 +34,38 @@ import { ButtonComponent } from '../../shared/button/button.component';
   templateUrl: './student-form.component.html',
   styleUrl: './student-form.component.scss',
 })
-export class StudentFormComponent {
+export class StudentFormComponent implements OnInit {
   @Output() submit = new EventEmitter<IStudentSubmit>();
+  @Input() value: Student | null = null;
 
   isLinear = false;
 
   basicDetails = new FormGroup(
     {
       name: new FormControl('', Validators.required),
-      age: new FormControl('', [
+      age: new FormControl(0, [
         Validators.required,
         Validators.min(6),
         Validators.max(20),
       ]),
       email: new FormControl('', [Validators.email, Validators.required]),
       username: new FormControl('', Validators.required),
-      class: new FormControl('', [
+      class: new FormControl(0, [
         Validators.required,
         Validators.min(0),
         Validators.max(12),
       ]),
-      maths: new FormControl('', [
+      maths: new FormControl(0, [
         Validators.required,
         Validators.min(0),
         Validators.max(100),
       ]),
-      english: new FormControl('', [
+      english: new FormControl(0, [
         Validators.required,
         Validators.min(0),
         Validators.max(100),
       ]),
-      science: new FormControl('', [
+      science: new FormControl(0, [
         Validators.required,
         Validators.min(0),
         Validators.max(100),
@@ -79,6 +78,21 @@ export class StudentFormComponent {
     },
     { validators: this.matchPasswords }
   );
+
+  ngOnInit(): void {
+    if (this.value) {
+      this.basicDetails.patchValue({
+        name: this.value.name,
+        username: this.value.username,
+        age: this.value.age,
+        class: this.value.class,
+        maths: this.value.marks.math,
+        english: this.value.marks.english,
+        science: this.value.marks.science,
+        email: this.value.email,
+      });
+    }
+  }
 
   onSubmit(event: SubmitEvent) {
     event.preventDefault();

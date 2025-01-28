@@ -46,9 +46,11 @@
             </div>
           </td>
           <td class="actions">
-            <app-button [variant]="'warning'" [classList]="['rounded']">
-              <img src="/assets/icons/edit.svg" width="16" height="16" />
-            </app-button>
+            <a [routerLink]="['/edit-student', student.id]">
+              <app-button [variant]="'warning'" [classList]="['rounded']">
+                <img src="/assets/icons/edit.svg" width="16" height="16" />
+              </app-button>
+            </a>
             <app-button
               [variant]="'error'"
               [classList]="['rounded']"
@@ -72,7 +74,9 @@
       <b>{{ currentStudent?.name || "Student" }}</b> from database?
     </p>
     <div class="actions">
-      <app-button [variant]="'secondary'"> Cancel </app-button>
+      <app-button [variant]="'secondary'" (click)="handleDeleteDialogClose()">
+        Cancel
+      </app-button>
       <app-button
         [variant]="'error'"
         (click)="deleteStudent(currentStudent?.id || '')"

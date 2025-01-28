@@ -1,0 +1,22 @@
+<div class="editStudent">
+  <section class="editStudent__header">
+    <h1 class="editStudent__header-title">Edit Student Details</h1>
+    <p class="editStudent__header-subtitle">
+      Need an improvement, change it easily...
+    </p>
+  </section>
+  <div class="form-container">
+    <app-student-form (submit)="onSubmit($event)" [value]="student">
+      <app-button
+        [styles]="{
+          background: 'linear-gradient(to left,  #244374 60%, #061700)',
+          padding: '13px',
+          fontWeight: '600'
+        }"
+        [type]="'submit'"
+      >
+        Update Details
+      </app-button>
+    </app-student-form>
+  </div>
+</div>

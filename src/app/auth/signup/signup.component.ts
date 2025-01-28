@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { Student } from '../../../types/student.type';
+import { IStudentSubmit, Student } from '../../../types/student.type';
 import { AuthService } from '../../../service/auth.service';
 import { StudentFormComponent } from '../../student/student-form/student-form.component';
 
@@ -35,7 +35,7 @@ export class SignupComponent {
 
   constructor(private authService: AuthService) {}
 
-  onSubmit(student: Student) {
-    this.authService.register(student);
+  onSubmit(data: IStudentSubmit) {
+    if (data.valid) this.authService.register(data.student);
   }
 }

@@ -41,9 +41,9 @@ export class StudentsService {
     this.dbService.set(STUDENTS_KEY, this._students);
   }
 
-  update(id: string, value: Student) {
+  update(value: Student) {
     this._students = this._students.map((student) => {
-      if (student.id == id) {
+      if (student.id == value.id) {
         student = { ...value };
       }
 
