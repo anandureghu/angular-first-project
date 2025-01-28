@@ -31,9 +31,7 @@
       <h2>{{ user?.name }}</h2>
     </li>
     <li class="nav__userDetails-logout">
-      <a [routerLink]="['/login']" routerLinkActive="router-link-active">
-        <app-button>logout</app-button>
-      </a>
+      <app-button (click)="logout()">logout</app-button>
     </li>
   </ul>
 </nav>

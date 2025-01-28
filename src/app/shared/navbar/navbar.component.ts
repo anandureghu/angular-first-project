@@ -28,4 +28,8 @@ export class NavbarComponent implements OnInit {
     });
     this.user = this.authService._user;
   }
+
+  logout() {
+    this.authService.logout();
+  }
 }

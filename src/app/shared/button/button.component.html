@@ -2,6 +2,7 @@
   [class]="['button', variant, classList.join(' ')].join(' ')"
   [style]="styles"
   [type]="type"
+  (click)="onClick()"
 >
   <ng-content />
 </button>

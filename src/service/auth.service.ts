@@ -39,8 +39,26 @@ export class AuthService {
       } else {
         return { success: false, message: 'Password not matching' };
       }
+    } else return { success: false, message: 'Student not found' };
+  }
+
+  authorize(): { success: boolean; message: string } {
+    if (!this._user) {
+      const authorization = this.dbService.get(USER_KEY);
+      if (authorization) {
+        const student = this.studentService.findByEmail(authorization);
+        if (student) {
+          this._user = student;
+          this.router.navigate(['/']);
+          return { success: true, message: 'Login Success' };
+        } else {
+          this.router.navigate(['/login']);
+          return { success: false, message: 'Student not found' };
+        }
+      }
+      return { success: true, message: 'Login Success' };
     }
-    return { success: false, message: 'Student not found' };
+    return { success: true, message: 'Login Success' };
   }
 
   logout() {

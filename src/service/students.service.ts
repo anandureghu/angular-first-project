@@ -26,9 +26,28 @@ export class StudentsService {
     return this._students;
   }
 
-  getById(id: string) {}
+  findById(id: string): Student | null {
+    const student = this._students.find((student) => student.id == id);
+    return student || null;
+  }
 
-  deleteById(id: string) {}
+  findByEmail(email: string): Student | null {
+    const student = this._students.find((student) => student.email == email);
+    return student || null;
+  }
 
-  update(id: string) {}
+  deleteById(id: string) {
+    this._students = this._students.filter((student) => student.id !== id);
+    this.dbService.set(STUDENTS_KEY, this._students);
+  }
+
+  update(id: string, value: Student) {
+    this._students = this._students.map((student) => {
+      if (student.id == id) {
+        student = { ...value };
+      }
+
+      return student;
+    });
+  }
 }

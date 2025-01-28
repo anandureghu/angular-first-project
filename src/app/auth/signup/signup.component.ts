@@ -111,6 +111,14 @@ export class SignupComponent {
     }
   }
 
+  getTotalMarks() {
+    return (
+      +this.basicDetails.value.maths! +
+      +this.basicDetails.value.english! +
+      +this.basicDetails.value.science!
+    );
+  }
+
   matchPasswords(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       // const forbidden = nameRe.test(control.value);
