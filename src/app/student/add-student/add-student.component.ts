@@ -18,7 +18,6 @@ export class AddStudentComponent {
   ) {}
 
   onSubmit(data: IStudentSubmit) {
-    console.log(data);
     if (data.valid) {
       this.studentsService.add(data.student);
       this.router.navigate(['/']);

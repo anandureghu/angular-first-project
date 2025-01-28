@@ -21,7 +21,6 @@ export class StudentsService {
   }
 
   add(student: Student): Student[] {
-    console.log(student);
     this._students.unshift(student);
     this.dbService.set(STUDENTS_KEY, this._students);
     return this._students;

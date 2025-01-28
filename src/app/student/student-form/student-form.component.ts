@@ -83,8 +83,6 @@ export class StudentFormComponent {
   onSubmit(event: SubmitEvent) {
     event.preventDefault();
 
-    console.log(this.basicDetails.valid);
-
     if (this.basicDetails.valid) {
       const student: Student = {
         id: uuidv4(),

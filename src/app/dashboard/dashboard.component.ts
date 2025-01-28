@@ -33,11 +33,8 @@ export class DashboardComponent {
   }
 
   handleDeleteClickOpen(name: string, id: string) {
-    console.log('first');
     this.openDeleteDialog = true;
     this.currentStudent = { name, id };
-
-    console.log(this.openDeleteDialog);
   }
 
   handleDeleteDialogClose() {
