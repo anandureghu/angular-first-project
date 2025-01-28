@@ -13,3 +13,8 @@ export interface Student {
   };
   totalMarks: number;
 }
+
+export interface IStudentSubmit {
+  student: Student;
+  valid: boolean;
+}

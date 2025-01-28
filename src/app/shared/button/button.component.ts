@@ -12,6 +12,8 @@ export class ButtonComponent {
   @Input() classList: ButtonClasses[] = [];
   @Input() styles: object = {};
   @Input() type: string = 'button';
+  @Input() disabled: boolean = false;
+
   @Output() click = new EventEmitter<void>();
 
   onClick() {

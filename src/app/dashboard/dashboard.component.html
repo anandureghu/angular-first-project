@@ -49,7 +49,11 @@
             <app-button [variant]="'warning'" [classList]="['rounded']">
               <img src="/assets/icons/edit.svg" width="16" height="16" />
             </app-button>
-            <app-button [variant]="'error'" [classList]="['rounded']">
+            <app-button
+              [variant]="'error'"
+              [classList]="['rounded']"
+              (click)="handleDeleteClickOpen(student?.name || '', student.id)"
+            >
               <img src="/assets/icons/delete.svg" width="16" height="16" />
             </app-button>
           </td>
@@ -59,3 +63,22 @@
     </table>
   </section>
 </main>
+
+<app-dialog [open]="openDeleteDialog" (close)="handleDeleteDialogClose()">
+  <div class="deleteDialog">
+    <h2 class="title">Delete Student?</h2>
+    <p class="subtitle">
+      Are you sure you want to delete
+      <b>{{ currentStudent?.name || "Student" }}</b> from database?
+    </p>
+    <div class="actions">
+      <app-button [variant]="'secondary'"> Cancel </app-button>
+      <app-button
+        [variant]="'error'"
+        (click)="deleteStudent(currentStudent?.id || '')"
+      >
+        Delete
+      </app-button>
+    </div>
+  </div>
+</app-dialog>

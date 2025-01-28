@@ -1,0 +1,22 @@
+<div class="addStudent">
+  <section class="addStudent__header">
+    <h1 class="addStudent__header-title">Add new Student</h1>
+    <p class="addStudent__header-subtitle">
+      Lets add some students to our database to keep track of everyone.
+    </p>
+  </section>
+  <div class="form-container">
+    <app-student-form (submit)="onSubmit($event)">
+      <app-button
+        [styles]="{
+          background: 'linear-gradient(to left,  #244374 60%, #061700)',
+          padding: '13px',
+          fontWeight: '600'
+        }"
+        [type]="'submit'"
+      >
+        Add New Student
+      </app-button>
+    </app-student-form>
+  </div>
+</div>

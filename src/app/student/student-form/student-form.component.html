@@ -1,0 +1,125 @@
+<form
+  class="student__form"
+  [formGroup]="basicDetails"
+  (ngSubmit)="onSubmit($event)"
+>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Basic Info</ng-template>
+      <h3>Basic Details</h3>
+      <div class="flex-col">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" />
+        </mat-form-field>
+
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Age</mat-label>
+          <input
+            matInput
+            type="number"
+            min="6"
+            max="20"
+            formControlName="age"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="flex space-en+d">
+        <button mat-button matStepperNext type="button">Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Academic Info</ng-template>
+      <h3>Class</h3>
+      <mat-form-field class="" appearance="outline">
+        <mat-label>Class</mat-label>
+        <input
+          matInput
+          type="number"
+          min="1"
+          max="12"
+          formControlName="class"
+        />
+      </mat-form-field>
+      <h3>Marks</h3>
+      <div class="flex">
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Maths</mat-label>
+          <input
+            matInput
+            type="number"
+            min="0"
+            max="100"
+            formControlName="maths"
+          />
+        </mat-form-field>
+        <mat-form-field class="" appearance="outline">
+          <mat-label>English</mat-label>
+          <input
+            matInput
+            type="number"
+            min="0"
+            max="100"
+            formControlName="english"
+          />
+        </mat-form-field>
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Science</mat-label>
+          <input
+            matInput
+            type="number"
+            min="0"
+            max="100"
+            formControlName="science"
+          />
+        </mat-form-field>
+      </div>
+      @if(getTotalMarks() > 0){
+      <span>Total Marks: {{ getTotalMarks() }}</span>
+      }
+      <div class="flex space-between">
+        <button mat-button matStepperPrevious type="button">Back</button>
+        <button mat-button matStepperNext type="button">Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Credentials</ng-template>
+      <div class="flex-col">
+        <h3>Lets set a password for your account</h3>
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+
+        <mat-form-field class="" appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" />
+        </mat-form-field>
+      </div>
+      <div class="flex space-between">
+        <button mat-button matStepperPrevious type="button">Back</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+  <div *ngFor="let controlName of getErrorKeys()">
+    <div *ngIf="getErrorMessage(controlName)">
+      {{ getErrorMessage(controlName) }}
+    </div>
+  </div>
+
+  <!-- button -->
+  <ng-content />
+</form>

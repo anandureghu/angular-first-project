@@ -129,3 +129,29 @@
     }
   }
 }
+
+.deleteDialog {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  padding: 20px;
+
+  .title {
+    font-weight: 600;
+  }
+
+  .subtitle {
+    color: gray;
+
+    b {
+      color: rgb(43, 43, 43);
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: end;
+  }
+}
